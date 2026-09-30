@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio Ideal | English Grammar Lab: There is & There are</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ideal: {
+                            orange: '#FF6600',
+                            orangeLight: '#FF8533',
+                            orangeDark: '#CC5200',
+                            bg: '#111116',
+                            card: '#18181F',
+                            cardHover: '#22222E',
+                            border: '#2A2A38',
+                            accent: '#FFB380'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111116;
+            color: #E2E8F0;
+        }
+
+        /* Glow effects */
+        .glow-orange {
+            box-shadow: 0 0 25px rgba(255, 102, 0, 0.25);
+        }
+        .glow-orange-sm {
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+        }
+        .glow-green {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+        }
+        .glow-red {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A38;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6600;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+
+        /* Unscramble Chip Styling */
+        .word-chip {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+        .word-chip:hover {
+            transform: translateY(-2px);
+        }
+        .word-chip:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-ideal-orange selection:text-white">
+
+    <!-- TOP HEADER -->
+    <header class="sticky top-0 z-40 bg-ideal-card/90 backdrop-blur-md border-b border-ideal-border shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo & School Info -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-ideal-orange to-ideal-orangeDark flex items-center justify-center shadow-lg shadow-ideal-orange/30 font-extrabold text-white text-xl tracking-wider border border-white/20">
+                    CI
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-wide text-white">COLÉGIO <span class="text-ideal-orange">IDEAL</span></span>
+                        <span class="bg-ideal-orange/20 text-ideal-orange text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full border border-ideal-orange/30">Aracaju - SE</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium hidden sm:block">Ensino Fundamental I • 5º Ano | English Grammar Lab</p>
+                </div>
+            </div>
+
+            <!-- Subject Badge & Step Indicator -->
+            <div class="flex items-center space-x-3">
+                <div class="hidden md:flex flex-col items-end mr-2">
+                    <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Tópico Gramatical</span>
+                    <span class="text-sm font-bold text-ideal-orange">There is / There are</span>
+                </div>
+                <span class="bg-ideal-cardHover text-gray-300 border border-ideal-border text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-graduation-cap text-ideal-orange"></i>
+                    <span id="headerStepLabel">Revisão</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+        <!-- ========================================================================= -->
+        <!-- ETAPA 1: REVISÃO DE CONCEITO E ESTRUTURA                                  -->
+        <!-- ========================================================================= -->
+        <section id="step1-review" class="space-y-8 animate-fadeIn">
+            <!-- Banner Intro -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-ideal-card via-ideal-cardHover to-ideal-card p-6 sm:p-10 border border-ideal-border shadow-xl">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-ideal-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="relative z-10 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 bg-ideal-orange/10 text-ideal-orange text-xs font-bold px-3 py-1 rounded-full border border-ideal-orange/30 mb-4 uppercase tracking-wider">
+                        <i class="fa-solid fa-book-open"></i> Guia de Estudo • 5º Ano
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                        Aprenda a usar <span class="text-ideal-orange underline decoration-ideal-orange/40 underline-offset-8">There is</span> e <span class="text-ideal-orange underline decoration-ideal-orange/40 underline-offset-8">There are</span>!
+                    </h1>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        Em inglês, quando queremos dizer que algo <strong>"existe"</strong> ou que <strong>"há / tem"</strong> algo em algum lugar, usamos o verbo <strong class="text-ideal-orange">There be</strong>. Vamos revisar como aplicar essa regra nas formas Afirmativa, Negativa e Interrogativa de maneira super simples!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conceptual Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Affirmative -->
+                <div class="bg-ideal-card rounded-2xl p-6 border border-ideal-border hover:border-ideal-orange/50 transition-all duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">1. Afirmativa</h3>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                            Usado para afirmar a presença ou existência de objetos, pessoas ou lugares.
+                        </p>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-ideal-bg p-3 rounded-xl border border-ideal-border/60">
+                                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">Singular (Um só)</span>
+                                <p class="font-semibold text-white">There is a book on the table.</p>
+                                <p class="text-xs text-gray-400 italic">(Há um livro sobre a mesa.)</p>
+                            </div>
+                            <div class="bg-ideal-bg p-3 rounded-xl border border-ideal-border/60">
+                                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">Plural (Dois ou mais)</span>
+                                <p class="font-semibold text-white">There are three apples in the box.</p>
+                                <p class="text-xs text-gray-400 italic">(Há três maçãs na caixa.)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-ideal-border/50 text-xs text-emerald-300 font-medium">
+                        💡 Dica: <strong>There's</strong> é a forma contraída de <em>There is</em>!
+                    </div>
+                </div>
+
+                <!-- Card 2: Negative -->
+                <div class="bg-ideal-card rounded-2xl p-6 border border-ideal-border hover:border-ideal-orange/50 transition-all duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/30 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">2. Negativa</h3>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                            Usado para dizer que algo NÃO existe no local. Basta adicionar o <strong>not</strong>!
+                        </p>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-ideal-bg p-3 rounded-xl border border-ideal-border/60">
+                                <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">Singular</span>
+                                <p class="font-semibold text-white">There is not / isn't any milk.</p>
+                                <p class="text-xs text-gray-400 italic">(Não há leite.)</p>
+                            </div>
+                            <div class="bg-ideal-bg p-3 rounded-xl border border-ideal-border/60">
+                                <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">Plural</span>
+                                <p class="font-semibold text-white">There are not / aren't two dogs here.</p>
+                                <p class="text-xs text-gray-400 italic">(Não há dois cães aqui.)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-ideal-border/50 text-xs text-rose-300 font-medium">
+                        💡 Contrações: <strong>isn't</strong> = is not | <strong>aren't</strong> = are not
+                    </div>
+                </div>
+
+                <!-- Card 3: Interrogative -->
+                <div class="bg-ideal-card rounded-2xl p-6 border border-ideal-border hover:border-ideal-orange/50 transition-all duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-question"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">3. Interrogativa</h3>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                            Para fazer perguntas, nós <strong>invertemos</strong> a ordem do verbo com a palavra "There"!
+                        </p>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-ideal-bg p-3 rounded-xl border border-ideal-border/60">
+                                <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider block mb-1">Singular</span>
+                                <p class="font-semibold text-white">Is there a cat on the roof?</p>
+                                <p class="text-xs text-gray-400 italic">(Há um gato no telhado?)</p>
+                            </div>
+                            <div class="bg-ideal-bg p-3 rounded-xl border border-ideal-border/60">
+                                <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider block mb-1">Plural</span>
+                                <p class="font-semibold text-white">Are there many students in class?</p>
+                                <p class="text-xs text-gray-400 italic">(Há muitos alunos na sala?)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-ideal-border/50 text-xs text-amber-300 font-medium">
+                        💡 Lembre-se: O verbo vai para a frente! (<strong>Is there...? / Are there...?</strong>)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Quick Note Box -->
+            <div class="bg-gradient-to-r from-ideal-orange/10 via-ideal-card to-ideal-card rounded-2xl p-6 border border-ideal-orange/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-ideal-orange/20 text-ideal-orange flex items-center justify-center shrink-0 text-lg">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white">Super Dica de Ouro! 🌟</h4>
+                        <p class="text-xs sm:text-sm text-gray-300">
+                            Observe sempre o <strong>substantivo</strong> que vem logo depois: se for 1 só elemento (singular/incontável), use <strong>IS</strong>. Se forem 2 ou mais (plural com 's'), use <strong>ARE</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Quiz CTA -->
+            <div class="flex flex-col items-center justify-center pt-4 pb-8">
+                <button onclick="goToStep(2)" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-ideal-orange to-ideal-orangeLight rounded-2xl shadow-xl shadow-ideal-orange/30 hover:shadow-ideal-orange/50 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20">
+                    <span>Start Quiz! 🚀</span>
+                    <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                <p class="text-xs text-gray-500 mt-3 font-medium">Desafio de 40 questões rápidas • 5º Ano Fund I</p>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ETAPA 2: IDENTIFICAÇÃO DO ALUNO                                           -->
+        <!-- ========================================================================= -->
+        <section id="step2-user" class="hidden min-h-[60vh] flex items-center justify-center animate-fadeIn">
+            <div class="max-w-md w-full bg-ideal-card rounded-3xl p-8 border border-ideal-border shadow-2xl relative overflow-hidden text-center glow-orange-sm">
+                <div class="w-20 h-20 rounded-2xl bg-ideal-orange/10 border border-ideal-orange/30 text-ideal-orange flex items-center justify-center text-3xl mx-auto mb-6 shadow-inner">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                
+                <h2 class="text-2xl font-extrabold text-white mb-2">Quem vai fazer o Quiz?</h2>
+                <p class="text-xs text-gray-400 mb-6">Digite seu nome completo para registrarmos seu desempenho no relatório final do Colégio Ideal.</p>
+
+                <form onsubmit="handleStartQuiz(event)" class="space-y-4">
+                    <div class="text-left">
+                        <label for="studentName" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Nome do Aluno(a):</label>
+                        <input type="text" id="studentName" required placeholder="Ex: Lucas Silva" 
+                            class="w-full bg-ideal-bg border border-ideal-border focus:border-ideal-orange focus:ring-2 focus:ring-ideal-orange/30 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 outline-none transition-all font-medium text-sm">
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-ideal-orange to-ideal-orangeDark text-white font-bold py-4 rounded-xl shadow-lg shadow-ideal-orange/25 hover:shadow-ideal-orange/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-base">
+                        <span>Iniciar Desafio (40 Questões)</span>
+                        <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                </form>
+
+                <button onclick="goToStep(1)" class="mt-4 text-xs text-gray-500 hover:text-gray-300 underline font-medium transition-colors">
+                    ← Voltar para a Revisão de Teoria
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ETAPA 3: O QUIZ INTERATIVO (40 QUESTÕES A1 CEFR)                          -->
+        <!-- ========================================================================= -->
+        <section id="step3-quiz" class="hidden animate-fadeIn">
+            <!-- Progress Bar & Top Meta -->
+            <div class="mb-6 bg-ideal-card p-4 rounded-2xl border border-ideal-border shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-ideal-orange/20 text-ideal-orange font-bold flex items-center justify-center text-sm border border-ideal-orange/30">
+                        <span id="currentQuestionNum">1</span>/40
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-400 block font-semibold uppercase tracking-wider">Aluno(a) em ação:</span>
+                        <span id="displayStudentName" class="font-bold text-white text-sm">Aluno</span>
+                    </div>
+                </div>
+
+                <!-- Progress Visual -->
+                <div class="flex-grow max-w-md">
+                    <div class="flex justify-between text-xs font-semibold mb-1">
+                        <span class="text-gray-400">Progresso do Quiz</span>
+                        <span id="progressPercent" class="text-ideal-orange">0%</span>
+                    </div>
+                    <div class="w-full bg-ideal-bg rounded-full h-3 overflow-hidden border border-ideal-border/50">
+                        <div id="progressBar" class="bg-gradient-to-r from-ideal-orange to-ideal-orangeLight h-full rounded-full transition-all duration-300 w-0"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle for Drawer Menu -->
+                <button onclick="toggleSidebar()" class="lg:hidden bg-ideal-cardHover text-gray-300 px-4 py-2 rounded-xl text-xs font-bold border border-ideal-border flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-ideal-orange"></i>
+                    <span>Ver Todas as Questões</span>
+                </button>
+            </div>
+
+            <!-- Quiz Layout Grid (Sidebar + Question Display) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- SIDEBAR NAVIGATOR -->
+                <aside id="quizSidebar" class="lg:col-span-4 bg-ideal-card p-5 rounded-2xl border border-ideal-border shadow-lg space-y-4">
+                    <div class="flex items-center justify-between pb-3 border-b border-ideal-border">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-grid-2 text-ideal-orange"></i>
+                            <h3 class="font-bold text-white text-sm">Navegador de Questões</h3>
+                        </div>
+                        <span class="text-[11px] text-gray-400 bg-ideal-bg px-2 py-0.5 rounded border border-ideal-border">40 Questões</span>
+                    </div>
+
+                    <!-- Filter / Section Labels -->
+                    <div class="space-y-4 text-xs max-h-[480px] overflow-y-auto pr-1">
+                        <!-- Afirmativas (1 - 10) -->
+                        <div>
+                            <span class="text-emerald-400 font-semibold mb-2 block uppercase text-[10px] tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-plus text-[10px]"></i> Afirmativas (1 a 10)
+                            </span>
+                            <div id="navGroup1" class="grid grid-cols-5 gap-2"></div>
+                        </div>
+
+                        <!-- Negativas (11 - 25) -->
+                        <div>
+                            <span class="text-rose-400 font-semibold mb-2 block uppercase text-[10px] tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-minus text-[10px]"></i> Negativas (11 a 25)
+                            </span>
+                            <div id="navGroup2" class="grid grid-cols-5 gap-2"></div>
+                        </div>
+
+                        <!-- Interrogativas (26 - 40) -->
+                        <div>
+                            <span class="text-amber-400 font-semibold mb-2 block uppercase text-[10px] tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-question text-[10px]"></i> Interrogativas (26 a 40)
+                            </span>
+                            <div id="navGroup3" class="grid grid-cols-5 gap-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="pt-3 border-t border-ideal-border grid grid-cols-2 gap-2 text-[10px] text-gray-400">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-ideal-bg border border-ideal-border"></span> Pendente
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Correta
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Incorreta
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-ideal-orange"></span> Atual
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- QUESTION DISPLAY CARD -->
+                <div class="lg:col-span-8 bg-ideal-card p-6 sm:p-8 rounded-2xl border border-ideal-border shadow-xl min-h-[480px] flex flex-col justify-between relative">
+                    
+                    <div>
+                        <!-- Category Tag & Question Type -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-6 pb-4 border-b border-ideal-border">
+                            <span id="questionCategoryBadge" class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                                Afirmativa
+                            </span>
+                            <span id="questionTypeBadge" class="text-xs text-gray-400 font-medium">
+                                Múltipla Escolha (Objetiva)
+                            </span>
+                        </div>
+
+                        <!-- Question Prompt / Text -->
+                        <div class="mb-6">
+                            <h2 id="questionPrompt" class="text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+                                Carregando questão...
+                            </h2>
+                            <p id="questionInstruction" class="text-xs sm:text-sm text-gray-400 italic">
+                                Escolha a opção correta que completa a frase em inglês.
+                            </p>
+                        </div>
+
+                        <!-- CONTAINER FOR OBJECTIVE (Multiple Choice) -->
+                        <div id="objectiveContainer" class="space-y-3 my-4"></div>
+
+                        <!-- CONTAINER FOR UNSCRAMBLE (Word Builder) -->
+                        <div id="unscrambleContainer" class="hidden my-4 space-y-4">
+                            <!-- Sentence Drop Area -->
+                            <div class="min-h-[68px] p-3 sm:p-4 bg-ideal-bg rounded-xl border-2 border-dashed border-ideal-border flex flex-wrap gap-2 items-center" id="builtSentenceArea">
+                                <span class="text-xs text-gray-500 italic select-none" id="unscramblePlaceholder">Clique nas palavras abaixo na ordem correta para formar a frase...</span>
+                            </div>
+
+                            <!-- Word Bank Pool -->
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Banco de Palavras:</span>
+                                    <button onclick="resetUnscramble()" class="text-xs text-ideal-orange hover:underline font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-rotate-right text-[10px]"></i> Limpar
+                                    </button>
+                                </div>
+                                <div id="wordBankArea" class="flex flex-wrap gap-2 p-3 bg-ideal-cardHover/50 rounded-xl border border-ideal-border min-h-[56px] items-center"></div>
+                            </div>
+                        </div>
+
+                        <!-- FEEDBACK CARD DISPLAY -->
+                        <div id="feedbackCard" class="hidden my-4 p-4 rounded-xl border animate-fadeIn">
+                            <div class="flex items-start gap-3">
+                                <div id="feedbackIcon" class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-base font-bold"></div>
+                                <div class="space-y-1">
+                                    <h4 id="feedbackTitle" class="font-bold text-sm">--</h4>
+                                    <p id="feedbackText" class="text-xs sm:text-sm leading-relaxed">--</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD FOOTER ACTIONS -->
+                    <div class="pt-6 border-t border-ideal-border flex flex-wrap items-center justify-between gap-3 mt-6">
+                        <button id="btnPrev" onclick="navigateQuestion(-1)" class="bg-ideal-cardHover text-gray-300 hover:text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-ideal-border transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            <span>Anterior</span>
+                        </button>
+
+                        <div class="flex items-center gap-2">
+                            <button id="btnCheck" onclick="checkCurrentAnswer()" class="bg-gradient-to-r from-ideal-orange to-ideal-orangeDark text-white px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-ideal-orange/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Check</span>
+                            </button>
+
+                            <button id="btnNext" onclick="navigateQuestion(1)" class="bg-ideal-cardHover text-gray-300 hover:text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-ideal-border transition-colors flex items-center gap-2">
+                                <span>Próxima</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Finish Quiz Action Banner -->
+            <div class="mt-8 bg-ideal-card p-6 rounded-2xl border border-ideal-border text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-left">
+                    <h4 class="font-bold text-white text-base">Terminou todas as questões?</h4>
+                    <p class="text-xs text-gray-400">Você pode verificar o relatório completo com suas notas e recomendações pedagógicas.</p>
+                </div>
+                <button onclick="finishQuiz()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    <span>Finalizar e Ver Relatório</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ETAPA 4: RELATÓRIO FINAL DE DESEMPENHO                                    -->
+        <!-- ========================================================================= -->
+        <section id="step4-report" class="hidden space-y-8 animate-fadeIn">
+            <!-- Header Result Card -->
+            <div class="bg-ideal-card rounded-3xl p-6 sm:p-10 border border-ideal-border shadow-2xl relative overflow-hidden text-center glow-orange">
+                <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-ideal-orange to-amber-400 text-white flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg shadow-ideal-orange/40">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-white mb-1">
+                    Parabéns, <span id="reportStudentName" class="text-ideal-orange">Aluno</span>! 🎉
+                </h1>
+                <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">
+                    Aqui está o seu relatório pedagógico detalhado do teste de inglês no Colégio Ideal.
+                </p>
+
+                <!-- Score Overview Box -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-8">
+                    <div class="bg-ideal-bg p-5 rounded-2xl border border-ideal-border">
+                        <span class="text-xs text-gray-400 uppercase font-semibold tracking-wider block mb-1">Pontuação Total</span>
+                        <div class="text-3xl font-extrabold text-white">
+                            <span id="reportTotalCorrect">0</span> <span class="text-lg text-gray-500 font-normal">/ 40</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-ideal-bg p-5 rounded-2xl border border-ideal-border">
+                        <span class="text-xs text-gray-400 uppercase font-semibold tracking-wider block mb-1">Aproveitamento</span>
+                        <div id="reportPercentage" class="text-3xl font-extrabold text-ideal-orange">
+                            0%
+                        </div>
+                    </div>
+
+                    <div class="bg-ideal-bg p-5 rounded-2xl border border-ideal-border">
+                        <span class="text-xs text-gray-400 uppercase font-semibold tracking-wider block mb-1">Classificação</span>
+                        <div id="reportGradeBadge" class="text-lg font-bold text-emerald-400 mt-1">
+                            Excelente!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Breakdown Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Affirmative Score -->
+                <div class="bg-ideal-card p-6 rounded-2xl border border-ideal-border">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus"></i> Frases Afirmativas
+                        </span>
+                        <span id="scoreAffirmativeText" class="text-sm font-bold text-white">0/10</span>
+                    </div>
+                    <div class="w-full bg-ideal-bg rounded-full h-3 overflow-hidden border border-ideal-border/60 mb-2">
+                        <div id="barAffirmative" class="bg-emerald-500 h-full rounded-full transition-all duration-1000 w-0"></div>
+                    </div>
+                    <p id="descAffirmative" class="text-xs text-gray-400">Objetivas e Unscramble</p>
+                </div>
+
+                <!-- Negative Score -->
+                <div class="bg-ideal-card p-6 rounded-2xl border border-ideal-border">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
+                            <i class="fa-solid fa-minus"></i> Frases Negativas
+                        </span>
+                        <span id="scoreNegativeText" class="text-sm font-bold text-white">0/15</span>
+                    </div>
+                    <div class="w-full bg-ideal-bg rounded-full h-3 overflow-hidden border border-ideal-border/60 mb-2">
+                        <div id="barNegative" class="bg-rose-500 h-full rounded-full transition-all duration-1000 w-0"></div>
+                    </div>
+                    <p id="descNegative" class="text-xs text-gray-400">Objetivas e Unscramble</p>
+                </div>
+
+                <!-- Interrogative Score -->
+                <div class="bg-ideal-card p-6 rounded-2xl border border-ideal-border">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                            <i class="fa-solid fa-question"></i> Frases Interrogativas
+                        </span>
+                        <span id="scoreInterrogativeText" class="text-sm font-bold text-white">0/15</span>
+                    </div>
+                    <div class="w-full bg-ideal-bg rounded-full h-3 overflow-hidden border border-ideal-border/60 mb-2">
+                        <div id="barInterrogative" class="bg-amber-500 h-full rounded-full transition-all duration-1000 w-0"></div>
+                    </div>
+                    <p id="descInterrogative" class="text-xs text-gray-400">Objetivas e Unscramble</p>
+                </div>
+            </div>
+
+            <!-- Pedagogical Recommendation Box -->
+            <div class="bg-ideal-card p-6 sm:p-8 rounded-2xl border border-ideal-orange/30 relative overflow-hidden">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-ideal-orange/20 text-ideal-orange flex items-center justify-center shrink-0 text-xl border border-ideal-orange/30">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-white">Diagnóstico Pedagógico do Professor</h3>
+                        <p id="pedagogicalFeedback" class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            Carregando recomendação...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <button onclick="goToStep(3)" class="w-full sm:w-auto bg-ideal-cardHover text-white px-6 py-3.5 rounded-xl font-bold text-sm border border-ideal-border hover:border-ideal-orange transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Revisar Respostas no Quiz</span>
+                </button>
+
+                <button onclick="restartQuiz()" class="w-full sm:w-auto bg-gradient-to-r from-ideal-orange to-ideal-orangeDark text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-xl shadow-ideal-orange/30 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>Refazer Quiz Inteiro</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ideal-card border-t border-ideal-border py-6 mt-12 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p>© 2026 Colégio Ideal - Aracaju, Sergipe, Brasil. Todos os direitos reservados.</p>
+            <p class="text-gray-400 font-medium">Língua Inglesa • Profº Fundamental I</p>
+        </div>
+    </footer>
+
+    <script>
+        /* =========================================================================
+           QUESTIONS DATA BANK (40 Questions A1 Level - CEFR)
+           Block 1: Affirmative (10)  -> 4 Multiple Choice + 6 Unscramble
+           Block 2: Negative (15)     -> 6 Multiple Choice + 9 Unscramble
+           Block 3: Interrogative (15)-> 6 Multiple Choice + 9 Unscramble
+           ========================================================================= */
+
+        const rawQuestions = [
+            // --- BLOCK 1: AFFIRMATIVE (1-10) ---
+            {
+                id: 1,
+                block: 'affirmative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ a cat on the sofa."',
+                instruction: 'Escolha a opção correta para o singular.',
+                options: ['There is', 'There are', 'Are there', 'Is there', 'There not'],
+                correct: 'There is',
+                justification: 'Usamos "There is" porque "a cat" (um gato) está no singular!'
+            },
+            {
+                id: 2,
+                block: 'affirmative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ five books in my school bag."',
+                instruction: 'Escolha a opção correta para o plural.',
+                options: ['Is there', 'There is', 'There are', 'There be', 'Are there'],
+                correct: 'There are',
+                justification: 'Usamos "There are" porque "five books" (cinco livros) está no plural!'
+            },
+            {
+                id: 3,
+                block: 'affirmative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ an apple on the plate."',
+                instruction: 'Atenção ao artigo "an" (um/uma)!',
+                options: ['There are', 'Is there', 'There is', 'Are there', 'There isn\'t'],
+                correct: 'There is',
+                justification: 'Usamos "There is" com "an apple" (uma maçã), pois é singular.'
+            },
+            {
+                id: 4,
+                block: 'affirmative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ many students in the classroom."',
+                instruction: 'Escolha a opção adequada para "muitos estudantes".',
+                options: ['There is', 'There are', 'Is there', 'Are there', 'There be'],
+                correct: 'There are',
+                justification: 'Usamos "There are" para "many students" (muitos alunos), que indica plural.'
+            },
+            {
+                id: 5,
+                block: 'affirmative',
+                type: 'unscramble',
+                prompt: 'Monte a frase afirmativa correta:',
+                words: ['There', 'is', 'a', 'car', 'in', 'the', 'garage.'],
+                correctSentence: 'There is a car in the garage.',
+                justification: 'A ordem correta na afirmativa singular é: There + is + a car in the garage.'
+            },
+            {
+                id: 6,
+                block: 'affirmative',
+                type: 'unscramble',
+                prompt: 'Monte a frase afirmativa correta:',
+                words: ['There', 'are', 'two', 'pencils', 'on', 'the', 'desk.'],
+                correctSentence: 'There are two pencils on the desk.',
+                justification: 'Para o plural (dois lápis), usou-se: There + are + two pencils...'
+            },
+            {
+                id: 7,
+                block: 'affirmative',
+                type: 'unscramble',
+                prompt: 'Monte a frase afirmativa correta:',
+                words: ['There', 'is', 'a', 'dog', 'under', 'the', 'tree.'],
+                correctSentence: 'There is a dog under the tree.',
+                justification: 'Frase no singular: There + is + a dog + complemento.'
+            },
+            {
+                id: 8,
+                block: 'affirmative',
+                type: 'unscramble',
+                prompt: 'Monte a frase afirmativa correta:',
+                words: ['There', 'are', 'ten', 'birds', 'in', 'the', 'sky.'],
+                correctSentence: 'There are ten birds in the sky.',
+                justification: 'Plural (dez passarinhos): There + are + ten birds.'
+            },
+            {
+                id: 9,
+                block: 'affirmative',
+                type: 'unscramble',
+                prompt: 'Monte a frase afirmativa correta:',
+                words: ['There', 'is', 'a', 'teacher', 'in', 'the', 'room.'],
+                correctSentence: 'There is a teacher in the room.',
+                justification: 'Singular (um professor): There + is + a teacher.'
+            },
+            {
+                id: 10,
+                block: 'affirmative',
+                type: 'unscramble',
+                prompt: 'Monte a frase afirmativa correta:',
+                words: ['There', 'are', 'four', 'chairs', 'here.'],
+                correctSentence: 'There are four chairs here.',
+                justification: 'Plural (quatro cadeiras): There + are + four chairs here.'
+            },
+
+            // --- BLOCK 2: NEGATIVE (11-25) ---
+            {
+                id: 11,
+                block: 'negative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ a park near my house."',
+                instruction: 'Marque a opção negativa no singular.',
+                options: ['There is not', 'There are not', 'Is there not', 'Are there not', 'There not is'],
+                correct: 'There is not',
+                justification: 'No singular negativo usamos "There is not" (ou isn\'t) antes de "a park".'
+            },
+            {
+                id: 12,
+                block: 'negative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ any cookies in the jar."',
+                instruction: 'Marque a opção negativa no plural.',
+                options: ['There isn\'t', 'There aren\'t', 'Is there', 'Are there', 'There not are'],
+                correct: 'There aren\'t',
+                justification: 'Usamos "There aren\'t" para o plural negativo com "cookies".'
+            },
+            {
+                id: 13,
+                block: 'negative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ a clock on the wall."',
+                instruction: 'Escolha a forma negativa contraída (singular).',
+                options: ['There aren\'t', 'There isn\'t', 'Is there', 'There not', 'Are not there'],
+                correct: 'There isn\'t',
+                justification: '"There isn\'t" é a forma contraída de "There is not" para o singular.'
+            },
+            {
+                id: 14,
+                block: 'negative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ three bikes in the garden."',
+                instruction: 'Escolha a opção negativa plural.',
+                options: ['There is not', 'There are not', 'Is not there', 'There not', 'Are not'],
+                correct: 'There are not',
+                justification: 'Usamos "There are not" pois "three bikes" indica plural.'
+            },
+            {
+                id: 15,
+                block: 'negative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ a computer in this room."',
+                instruction: 'Singular negativo.',
+                options: ['There are not', 'There isn\'t', 'Are there not', 'There be not', 'Is not'],
+                correct: 'There isn\'t',
+                justification: 'Frase singular e negativa: "There isn\'t a computer".'
+            },
+            {
+                id: 16,
+                block: 'negative',
+                type: 'objective',
+                prompt: 'Complete the sentence: "_______ any games on my phone."',
+                instruction: 'Plural negativo.',
+                options: ['There aren\'t', 'There isn\'t', 'Is there not', 'There not are', 'There be'],
+                correct: 'There aren\'t',
+                justification: '"Games" está no plural, por isso a resposta é "There aren\'t".'
+            },
+            {
+                id: 17,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa correta:',
+                words: ['There', 'is', 'not', 'a', 'pen', 'here.'],
+                correctSentence: 'There is not a pen here.',
+                justification: 'Estrutura negativa no singular: There + is + not + a pen here.'
+            },
+            {
+                id: 18,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa correta:',
+                words: ['There', 'are', 'not', 'two', 'cats', 'on', 'the', 'bed.'],
+                correctSentence: 'There are not two cats on the bed.',
+                justification: 'Estrutura negativa no plural: There + are + not + two cats...'
+            },
+            {
+                id: 19,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa contraída:',
+                words: ['There', 'isn\'t', 'a', 'milk', 'bottle', 'here.'],
+                correctSentence: 'There isn\'t a milk bottle here.',
+                justification: 'Usou-se a contração "isn\'t" para o singular.'
+            },
+            {
+                id: 20,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa contraída:',
+                words: ['There', 'aren\'t', 'any', 'toys', 'in', 'the', 'box.'],
+                correctSentence: 'There aren\'t any toys in the box.',
+                justification: 'Usou-se a contração "aren\'t" para o plural.'
+            },
+            {
+                id: 21,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa correta:',
+                words: ['There', 'is', 'not', 'a', 'picture', 'on', 'the', 'wall.'],
+                correctSentence: 'There is not a picture on the wall.',
+                justification: 'Singular negativo: There + is + not + a picture...'
+            },
+            {
+                id: 22,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa correta:',
+                words: ['There', 'are', 'not', 'five', 'chairs', 'in', 'the', 'kitchen.'],
+                correctSentence: 'There are not five chairs in the kitchen.',
+                justification: 'Plural negativo: There + are + not + five chairs...'
+            },
+            {
+                id: 23,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa contraída:',
+                words: ['There', 'isn\'t', 'a', 'student', 'in', 'the', 'hall.'],
+                correctSentence: 'There isn\'t a student in the hall.',
+                justification: 'Singular negativo contraído: There + isn\'t...'
+            },
+            {
+                id: 24,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa contraída:',
+                words: ['There', 'aren\'t', 'many', 'cars', 'in', 'the', 'street.'],
+                correctSentence: 'There aren\'t many cars in the street.',
+                justification: 'Plural negativo contraído: There + aren\'t...'
+            },
+            {
+                id: 25,
+                block: 'negative',
+                type: 'unscramble',
+                prompt: 'Monte a frase negativa correta:',
+                words: ['There', 'is', 'not', 'an', 'umbrella', 'here.'],
+                correctSentence: 'There is not an umbrella here.',
+                justification: 'Singular negativo com artigo "an": There + is + not + an umbrella.'
+            },
+
+            // --- BLOCK 3: INTERROGATIVE (26-40) ---
+            {
+                id: 26,
+                block: 'interrogative',
+                type: 'objective',
+                prompt: 'Complete the question: "_______ a ball under the chair?"',
+                instruction: 'Escolha a forma interrogativa singular.',
+                options: ['Is there', 'Are there', 'There is', 'There are', 'Is it'],
+                correct: 'Is there',
+                justification: 'Nas perguntas em singular, invertemos para "Is there...?"'
+            },
+            {
+                id: 27,
+                block: 'interrogative',
+                type: 'objective',
+                prompt: 'Complete the question: "_______ many stars in the sky?"',
+                instruction: 'Escolha a forma interrogativa plural.',
+                options: ['There are', 'Are there', 'Is there', 'There is', 'Are it'],
+                correct: 'Are there',
+                justification: 'Nas perguntas em plural, invertemos para "Are there...?"'
+            },
+            {
+                id: 28,
+                block: 'interrogative',
+                type: 'objective',
+                prompt: 'Complete the question: "_______ a doctor in the hospital?"',
+                instruction: 'Pergunta singular.',
+                options: ['Are there', 'Is there', 'There is', 'There are', 'Be there'],
+                correct: 'Is there',
+                justification: 'Pergunta no singular: "Is there a doctor...?"'
+            },
+            {
+                id: 29,
+                block: 'interrogative',
+                type: 'objective',
+                prompt: 'Complete the question: "_______ two dogs in the yard?"',
+                instruction: 'Pergunta plural.',
+                options: ['Is there', 'Are there', 'There are', 'There is', 'Do there'],
+                correct: 'Are there',
+                justification: 'Pergunta no plural: "Are there two dogs...?"'
+            },
+            {
+                id: 30,
+                block: 'interrogative',
+                type: 'objective',
+                prompt: 'Complete the question: "_______ an orange in the basket?"',
+                instruction: 'Atenção para "an orange".',
+                options: ['Are there', 'Is there', 'There is', 'There are', 'Does there'],
+                correct: 'Is there',
+                justification: 'Pergunta no singular: "Is there an orange...?"'
+            },
+            {
+                id: 31,
+                block: 'interrogative',
+                type: 'objective',
+                prompt: 'Complete the question: "_______ seven days in a week?"',
+                instruction: 'Pergunta plural sobre os dias da semana.',
+                options: ['Is there', 'There are', 'Are there', 'There is', 'Have there'],
+                correct: 'Are there',
+                justification: 'Pergunta no plural: "Are there seven days...?"'
+            },
+            {
+                id: 32,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta (Singular):',
+                words: ['Is', 'there', 'a', 'cat', 'on', 'the', 'roof?'],
+                correctSentence: 'Is there a cat on the roof?',
+                justification: 'Na pergunta singular invertemos: Is + there + a cat...?'
+            },
+            {
+                id: 33,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta (Plural):',
+                words: ['Are', 'there', 'three', 'birds', 'in', 'the', 'tree?'],
+                correctSentence: 'Are there three birds in the tree?',
+                justification: 'Na pergunta plural invertemos: Are + there + three birds...?'
+            },
+            {
+                id: 34,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Is', 'there', 'a', 'book', 'on', 'your', 'desk?'],
+                correctSentence: 'Is there a book on your desk?',
+                justification: 'Estrutura interrogativa singular: Is + there...'
+            },
+            {
+                id: 35,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Are', 'there', 'many', 'students', 'here?'],
+                correctSentence: 'Are there many students here?',
+                justification: 'Estrutura interrogativa plural: Are + there...'
+            },
+            {
+                id: 36,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Is', 'there', 'a', 'lamp', 'in', 'the', 'bedroom?'],
+                correctSentence: 'Is there a lamp in the bedroom?',
+                justification: 'Estrutura interrogativa singular: Is + there...'
+            },
+            {
+                id: 37,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Are', 'there', 'four', 'apples', 'in', 'the', 'bag?'],
+                correctSentence: 'Are there four apples in the bag?',
+                justification: 'Estrutura interrogativa plural: Are + there...'
+            },
+            {
+                id: 38,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Is', 'there', 'a', 'computer', 'on', 'the', 'table?'],
+                correctSentence: 'Is there a computer on the table?',
+                justification: 'Estrutura interrogativa singular: Is + there...'
+            },
+            {
+                id: 39,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Are', 'there', 'any', 'pencils', 'in', 'the', 'case?'],
+                correctSentence: 'Are there any pencils in the case?',
+                justification: 'Estrutura interrogativa plural com "any": Are + there...'
+            },
+            {
+                id: 40,
+                block: 'interrogative',
+                type: 'unscramble',
+                prompt: 'Monte a pergunta correta:',
+                words: ['Is', 'there', 'an', 'elephant', 'in', 'the', 'zoo?'],
+                correctSentence: 'Is there an elephant in the zoo?',
+                justification: 'Estrutura interrogativa singular: Is + there + an elephant...?'
+            }
+        ];
+
+        // APP STATE
+        let studentName = '';
+        let currentQuestionIndex = 0;
+        let questions = [];
+        let userAnswers = {}; // { qId: { answer: string/array, isCorrect: bool, checked: bool } }
+        let selectedWordsPool = {}; // For unscramble questions { qId: ['Word1', 'Word2'] }
+
+        // Fisher-Yates Shuffle
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // Initialize App
+        window.onload = function() {
+            prepareQuestions();
+            renderSidebarNav();
+        };
+
+        // Prepare Questions with Shuffled Options / Shuffled Word Tokens
+        function prepareQuestions() {
+            questions = rawQuestions.map(q => {
+                if (q.type === 'objective') {
+                    const shuffledOptions = shuffleArray(q.options);
+                    return { ...q, options: shuffledOptions };
+                } else if (q.type === 'unscramble') {
+                    // Ensure every single unscramble question gets a shuffledWords array
+                    const shuffled = shuffleArray(q.words);
+                    return { ...q, shuffledWords: shuffled };
+                }
+                return q;
+            });
+        }
+
+        /* Navigation between Etapas */
+        function goToStep(stepNumber) {
+            document.getElementById('step1-review').classList.add('hidden');
+            document.getElementById('step2-user').classList.add('hidden');
+            document.getElementById('step3-quiz').classList.add('hidden');
+            document.getElementById('step4-report').classList.add('hidden');
+
+            const label = document.getElementById('headerStepLabel');
+
+            if (stepNumber === 1) {
+                document.getElementById('step1-review').classList.remove('hidden');
+                label.textContent = 'Revisão';
+            } else if (stepNumber === 2) {
+                document.getElementById('step2-user').classList.remove('hidden');
+                label.textContent = 'Identificação';
+                document.getElementById('studentName').focus();
+            } else if (stepNumber === 3) {
+                document.getElementById('step3-quiz').classList.remove('hidden');
+                label.textContent = 'Quiz (40 Questões)';
+                loadQuestion(currentQuestionIndex);
+            } else if (stepNumber === 4) {
+                document.getElementById('step4-report').classList.remove('hidden');
+                label.textContent = 'Relatório Pedagógico';
+                generateReport();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle Form Submit for Student Name
+        function handleStartQuiz(event) {
+            event.preventDefault();
+            const input = document.getElementById('studentName');
+            if (input.value.trim() !== '') {
+                studentName = input.value.trim();
+                document.getElementById('displayStudentName').textContent = studentName;
+                document.getElementById('reportStudentName').textContent = studentName;
+                goToStep(3);
+            }
+        }
+
+        // Render Sidebar Navigator Boxes
+        function renderSidebarNav() {
+            const group1 = document.getElementById('navGroup1');
+            const group2 = document.getElementById('navGroup2');
+            const group3 = document.getElementById('navGroup3');
+
+            group1.innerHTML = '';
+            group2.innerHTML = '';
+            group3.innerHTML = '';
+
+            questions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.id = `navBtn-${idx}`;
+                btn.onclick = () => jumpToQuestion(idx);
+                btn.className = `h-9 rounded-lg font-bold text-xs flex items-center justify-center border transition-all duration-200`;
+
+                updateNavButtonState(btn, idx);
+                btn.textContent = idx + 1;
+
+                if (idx < 10) {
+                    group1.appendChild(btn);
+                } else if (idx < 25) {
+                    group2.appendChild(btn);
+                } else {
+                    group3.appendChild(btn);
+                }
+            });
+        }
+
+        // Update single sidebar button visual based on question state
+        function updateNavButtonState(btn, idx) {
+            const qId = questions[idx].id;
+            const state = userAnswers[qId];
+            const isCurrent = idx === currentQuestionIndex;
+
+            let base = "h-9 rounded-lg font-bold text-xs flex items-center justify-center border transition-all duration-200 ";
+
+            if (isCurrent) {
+                base += "bg-ideal-orange text-white border-ideal-orangeLight ring-2 ring-ideal-orange/40 scale-105 shadow-md ";
+            } else if (state && state.checked) {
+                if (state.isCorrect) {
+                    base += "bg-emerald-600/30 text-emerald-300 border-emerald-500/50 ";
+                } else {
+                    base += "bg-rose-600/30 text-rose-300 border-rose-500/50 ";
+                }
+            } else if (state && state.answer && state.answer.length > 0) {
+                base += "bg-amber-500/20 text-amber-300 border-amber-500/40 ";
+            } else {
+                base += "bg-ideal-bg hover:bg-ideal-cardHover text-gray-400 border-ideal-border/80 ";
+            }
+
+            btn.className = base;
+        }
+
+        // Refresh all Nav Buttons in Sidebar
+        function refreshAllNavButtons() {
+            questions.forEach((_, idx) => {
+                const btn = document.getElementById(`navBtn-${idx}`);
+                if (btn) updateNavButtonState(btn, idx);
+            });
+        }
+
+        // Toggle Sidebar Drawer on Mobile
+        function toggleSidebar() {
+            const sidebar = document.getElementById('quizSidebar');
+            sidebar.classList.toggle('hidden');
+        }
+
+        // Load Question Data into View
+        function loadQuestion(index) {
+            currentQuestionIndex = index;
+            const q = questions[index];
+
+            // Header Info
+            document.getElementById('currentQuestionNum').textContent = index + 1;
+            
+            // Progress percentage
+            const percent = Math.round(((index + 1) / 40) * 100);
+            document.getElementById('progressPercent').textContent = `${percent}%`;
+            document.getElementById('progressBar').style.width = `${percent}%`;
+
+            // Category Badge Styling
+            const catBadge = document.getElementById('questionCategoryBadge');
+            if (q.block === 'affirmative') {
+                catBadge.textContent = '1. Afirmativa';
+                catBadge.className = 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider';
+            } else if (q.block === 'negative') {
+                catBadge.textContent = '2. Negativa';
+                catBadge.className = 'bg-rose-500/10 text-rose-400 border border-rose-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider';
+            } else {
+                catBadge.textContent = '3. Interrogativa';
+                catBadge.className = 'bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider';
+            }
+
+            // Question Type Badge
+            document.getElementById('questionTypeBadge').textContent = q.type === 'objective' ? 'Múltipla Escolha (Objetiva)' : 'Unscramble (Desembaralhar)';
+
+            // Question Prompt & Instruction
+            document.getElementById('questionPrompt').textContent = `${index + 1}. ${q.prompt}`;
+            document.getElementById('questionInstruction').textContent = q.instruction || '';
+
+            // Containers Toggle
+            const objContainer = document.getElementById('objectiveContainer');
+            const unscrambleContainer = document.getElementById('unscrambleContainer');
+
+            if (q.type === 'objective') {
+                objContainer.classList.remove('hidden');
+                unscrambleContainer.classList.add('hidden');
+                renderObjectiveOptions(q);
+            } else {
+                objContainer.classList.add('hidden');
+                unscrambleContainer.classList.remove('hidden');
+                renderUnscrambleArea(q);
+            }
+
+            // Feedback Card Reset or Show if already answered
+            renderFeedbackCard(q);
+
+            // Button Nav States
+            document.getElementById('btnPrev').disabled = (index === 0);
+            document.getElementById('btnPrev').style.opacity = (index === 0) ? '0.5' : '1';
+
+            if (index === questions.length - 1) {
+                document.getElementById('btnNext').innerHTML = '<span>Ver Relatório</span> <i class="fa-solid fa-square-poll-vertical"></i>';
+            } else {
+                document.getElementById('btnNext').innerHTML = '<span>Próxima</span> <i class="fa-solid fa-chevron-right"></i>';
+            }
+
+            refreshAllNavButtons();
+        }
+
+        // Render Objective Options (A, B, C, D, E)
+        function renderObjectiveOptions(q) {
+            const container = document.getElementById('objectiveContainer');
+            container.innerHTML = '';
+
+            const letters = ['A', 'B', 'C', 'D', 'E'];
+            const savedAns = userAnswers[q.id];
+
+            q.options.forEach((optText, i) => {
+                const letter = letters[i];
+                const isSelected = savedAns && savedAns.answer === optText;
+                const isChecked = savedAns && savedAns.checked;
+
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.onclick = () => {
+                    if (isChecked) return; // Locked if already checked
+                    selectObjectiveOption(q.id, optText);
+                };
+
+                let btnStyle = "w-full p-4 rounded-xl border text-left transition-all duration-200 flex items-center justify-between ";
+
+                if (isChecked) {
+                    if (optText === q.correct) {
+                        btnStyle += "bg-emerald-500/20 border-emerald-500 text-white font-bold ";
+                    } else if (isSelected && !savedAns.isCorrect) {
+                        btnStyle += "bg-rose-500/20 border-rose-500 text-white font-bold ";
+                    } else {
+                        btnStyle += "bg-ideal-bg/60 border-ideal-border/40 text-gray-500 opacity-60 ";
+                    }
+                } else if (isSelected) {
+                    btnStyle += "bg-ideal-orange/20 border-ideal-orange text-white font-bold ring-2 ring-ideal-orange/30 ";
+                } else {
+                    btnStyle += "bg-ideal-bg hover:bg-ideal-cardHover border-ideal-border text-gray-200 hover:border-ideal-orange/50 ";
+                }
+
+                btn.className = btnStyle;
+
+                btn.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-ideal-card border border-ideal-border flex items-center justify-center font-bold text-xs ${isSelected ? 'text-ideal-orange border-ideal-orange' : 'text-gray-400'}">
+                            ${letter}
+                        </span>
+                        <span class="text-sm font-medium">${optText}</span>
+                    </div>
+                    ${isSelected ? '<i class="fa-solid fa-circle-dot text-ideal-orange"></i>' : '<i class="fa-regular fa-circle text-gray-600"></i>'}
+                `;
+
+                container.appendChild(btn);
+            });
+        }
+
+        // Handle selection of option
+        function selectObjectiveOption(qId, selectedOption) {
+            userAnswers[qId] = {
+                answer: selectedOption,
+                checked: false,
+                isCorrect: false
+            };
+            loadQuestion(currentQuestionIndex);
+        }
+
+        // Render Unscramble (Sentence Builder) - FIXED logic to ensure EVERY question initializes
+        function renderUnscrambleArea(q) {
+            const sentenceArea = document.getElementById('builtSentenceArea');
+            const wordBankArea = document.getElementById('wordBankArea');
+
+            // Initialize pool array if not exists
+            if (!selectedWordsPool[q.id]) {
+                if (userAnswers[q.id] && Array.isArray(userAnswers[q.id].answer)) {
+                    selectedWordsPool[q.id] = [...userAnswers[q.id].answer];
+                } else {
+                    selectedWordsPool[q.id] = [];
+                }
+            }
+
+            // Ensure shuffledWords exists on question object
+            if (!q.shuffledWords || q.shuffledWords.length === 0) {
+                q.shuffledWords = shuffleArray(q.words);
+            }
+
+            const chosenWords = selectedWordsPool[q.id];
+            const isChecked = userAnswers[q.id] && userAnswers[q.id].checked;
+
+            // Render Built Area Chips
+            sentenceArea.innerHTML = '';
+            if (chosenWords.length === 0) {
+                sentenceArea.innerHTML = `<span class="text-xs text-gray-500 italic select-none" id="unscramblePlaceholder">Clique nas palavras abaixo na ordem correta para formar a frase...</span>`;
+            } else {
+                chosenWords.forEach((word, index) => {
+                    const chip = document.createElement('button');
+                    chip.type = 'button';
+                    chip.onclick = () => {
+                        if (isChecked) return;
+                        removeWordFromBuilt(q.id, index);
+                    };
+                    chip.className = "word-chip bg-gradient-to-r from-ideal-orange to-ideal-orangeDark text-white px-3.5 py-2 rounded-xl text-xs font-bold shadow hover:scale-105 transition-all flex items-center gap-1.5 cursor-pointer";
+                    chip.innerHTML = `<span>${word}</span> <i class="fa-solid fa-xmark text-[10px] opacity-70"></i>`;
+                    sentenceArea.appendChild(chip);
+                });
+            }
+
+            // Calculate remaining available words for Word Bank Pool
+            wordBankArea.innerHTML = '';
+            
+            let remainingWords = [...q.shuffledWords];
+            chosenWords.forEach(w => {
+                const idx = remainingWords.indexOf(w);
+                if (idx > -1) remainingWords.splice(idx, 1);
+            });
+
+            if (remainingWords.length === 0) {
+                wordBankArea.innerHTML = `<span class="text-xs text-emerald-400 font-medium italic">Todas as palavras foram posicionadas! Clique em "Check" para validar.</span>`;
+            } else {
+                remainingWords.forEach((word) => {
+                    const chip = document.createElement('button');
+                    chip.type = 'button';
+                    chip.onclick = () => {
+                        if (isChecked) return;
+                        addWordToBuilt(q.id, word);
+                    };
+                    chip.className = "word-chip bg-ideal-bg hover:bg-ideal-orange/20 border border-ideal-border hover:border-ideal-orange/60 text-gray-200 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer shadow-sm";
+                    chip.textContent = word;
+                    wordBankArea.appendChild(chip);
+                });
+            }
+        }
+
+        // Add word to built pool
+        function addWordToBuilt(qId, word) {
+            if (!selectedWordsPool[qId]) selectedWordsPool[qId] = [];
+            selectedWordsPool[qId].push(word);
+
+            // Record into userAnswers
+            userAnswers[qId] = {
+                answer: [...selectedWordsPool[qId]],
+                checked: false,
+                isCorrect: false
+            };
+
+            renderUnscrambleArea(questions[currentQuestionIndex]);
+            refreshAllNavButtons();
+        }
+
+        // Remove word from built pool
+        function removeWordFromBuilt(qId, index) {
+            if (selectedWordsPool[qId]) {
+                selectedWordsPool[qId].splice(index, 1);
+                userAnswers[qId] = {
+                    answer: [...selectedWordsPool[qId]],
+                    checked: false,
+                    isCorrect: false
+                };
+            }
+            renderUnscrambleArea(questions[currentQuestionIndex]);
+            refreshAllNavButtons();
+        }
+
+        // Reset unscramble pool
+        function resetUnscramble() {
+            const q = questions[currentQuestionIndex];
+            if (userAnswers[q.id] && userAnswers[q.id].checked) return; // locked if checked
+
+            selectedWordsPool[q.id] = [];
+            userAnswers[q.id] = {
+                answer: [],
+                checked: false,
+                isCorrect: false
+            };
+            renderUnscrambleArea(q);
+            refreshAllNavButtons();
+        }
+
+        // Check current question answer
+        function checkCurrentAnswer() {
+            const q = questions[currentQuestionIndex];
+            const ansObj = userAnswers[q.id];
+
+            if (!ansObj || (!ansObj.answer) || (Array.isArray(ansObj.answer) && ansObj.answer.length === 0)) {
+                showToast("Por favor, selecione ou monte uma resposta antes de clicar em Check!");
+                return;
+            }
+
+            let isCorrect = false;
+
+            if (q.type === 'objective') {
+                isCorrect = (ansObj.answer === q.correct);
+            } else {
+                // Unscramble string compare
+                const userString = ansObj.answer.join(' ').trim();
+                isCorrect = (userString === q.correctSentence.trim());
+            }
+
+            // Save checked status
+            userAnswers[q.id] = {
+                ...ansObj,
+                checked: true,
+                isCorrect: isCorrect
+            };
+
+            loadQuestion(currentQuestionIndex);
+        }
+
+        // Display Feedback Card
+        function renderFeedbackCard(q) {
+            const card = document.getElementById('feedbackCard');
+            const icon = document.getElementById('feedbackIcon');
+            const title = document.getElementById('feedbackTitle');
+            const text = document.getElementById('feedbackText');
+
+            const state = userAnswers[q.id];
+
+            if (!state || !state.checked) {
+                card.classList.add('hidden');
+                return;
+            }
+
+            card.classList.remove('hidden');
+
+            if (state.isCorrect) {
+                card.className = "my-4 p-4 rounded-2xl border bg-emerald-500/10 border-emerald-500/40 text-emerald-300 animate-fadeIn glow-green";
+                icon.className = "w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center shrink-0 text-base font-bold shadow-md";
+                icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+                title.textContent = "Parabéns! Resposta Correta! 🎉";
+                text.textContent = q.justification || "Excelente trabalho! Você dominou esta regra.";
+            } else {
+                card.className = "my-4 p-4 rounded-2xl border bg-rose-500/10 border-rose-500/40 text-rose-300 animate-fadeIn glow-red";
+                icon.className = "w-8 h-8 rounded-lg bg-rose-500 text-white flex items-center justify-center shrink-0 text-base font-bold shadow-md";
+                icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                title.textContent = "Ops! Resposta Incorreta";
+
+                const correctText = q.type === 'objective' ? q.correct : q.correctSentence;
+                text.innerHTML = `<strong>Resposta correta:</strong> "${correctText}"<br><span class="text-xs text-gray-300 font-normal mt-1 block">💡 <strong>Justificativa:</strong> ${q.justification}</span>`;
+            }
+        }
+
+        // Navigate Next / Prev
+        function navigateQuestion(direction) {
+            const newIndex = currentQuestionIndex + direction;
+            if (newIndex >= 0 && newIndex < questions.length) {
+                loadQuestion(newIndex);
+            } else if (newIndex >= questions.length) {
+                finishQuiz();
+            }
+        }
+
+        // Jump directly from sidebar
+        function jumpToQuestion(index) {
+            loadQuestion(index);
+            if (window.innerWidth < 1024) {
+                document.getElementById('quizSidebar').classList.add('hidden');
+            }
+        }
+
+        // Simple Custom Notification Toast
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 bg-ideal-orange text-white text-xs font-bold px-5 py-3 rounded-xl shadow-2xl z-50 animate-bounce border border-white/20";
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Finish Quiz & Generate Full Report
+        function finishQuiz() {
+            goToStep(4);
+        }
+
+        // Compute scores and diagnostic
+        function generateReport() {
+            let totalCorrect = 0;
+            let affCorrect = 0;
+            let negCorrect = 0;
+            let intCorrect = 0;
+
+            questions.forEach(q => {
+                const ans = userAnswers[q.id];
+                if (ans && ans.checked && ans.isCorrect) {
+                    totalCorrect++;
+                    if (q.block === 'affirmative') affCorrect++;
+                    if (q.block === 'negative') negCorrect++;
+                    if (q.block === 'interrogative') intCorrect++;
+                }
+            });
+
+            // Set Totals
+            document.getElementById('reportTotalCorrect').textContent = totalCorrect;
+            const percentage = Math.round((totalCorrect / 40) * 100);
+            document.getElementById('reportPercentage').textContent = `${percentage}%`;
+
+            // Grade Badge
+            const badge = document.getElementById('reportGradeBadge');
+            if (percentage >= 85) {
+                badge.textContent = "Excelente! 🌟";
+                badge.className = "text-lg font-bold text-emerald-400 mt-1";
+            } else if (percentage >= 60) {
+                badge.textContent = "Bom Desempenho! 👍";
+                badge.className = "text-lg font-bold text-amber-400 mt-1";
+            } else {
+                badge.textContent = "Precisa de Revisão 📚";
+                badge.className = "text-lg font-bold text-rose-400 mt-1";
+            }
+
+            // Category Bar Progress & Text
+            document.getElementById('scoreAffirmativeText').textContent = `${affCorrect}/10`;
+            document.getElementById('barAffirmative').style.width = `${(affCorrect / 10) * 100}%`;
+
+            document.getElementById('scoreNegativeText').textContent = `${negCorrect}/15`;
+            document.getElementById('barNegative').style.width = `${(negCorrect / 15) * 100}%`;
+
+            document.getElementById('scoreInterrogativeText').textContent = `${intCorrect}/15`;
+            document.getElementById('barInterrogative').style.width = `${(intCorrect / 15) * 100}%`;
+
+            // Pedagogical Diagnosis Logic
+            const affPct = (affCorrect / 10) * 100;
+            const negPct = (negCorrect / 15) * 100;
+            const intPct = (intCorrect / 15) * 100;
+
+            let diagText = "";
+
+            if (percentage === 100) {
+                diagText = `Impressionante, ${studentName}! Você acertou 100% de todas as questões. Você domina completamente o uso de <strong>There is</strong> e <strong>There are</strong> nas formas afirmativa, negativa e interrogativa. Parabéns pelo excelente empenho!`;
+            } else {
+                const minPct = Math.min(affPct, negPct, intPct);
+                let weakCategories = [];
+
+                if (affPct === minPct) weakCategories.push('Frases Afirmativas');
+                if (negPct === minPct) weakCategories.push('Frases Negativas');
+                if (intPct === minPct) weakCategories.push('Frases Interrogativas');
+
+                diagText = `Olá, <strong>${studentName}</strong>! Seu aproveitamento geral foi de <strong>${percentage}%</strong>.<br><br>`;
+
+                if (weakCategories.includes('Frases Interrogativas')) {
+                    diagText += `⚠️ <strong>Ponto de Atenção Principal:</strong> Seu menor desempenho foi na parte de <em>Frases Interrogativas (${Math.round(intPct)}%)</em>. Lembre-se de sempre inverter o verbo nas perguntas: usamos <strong>"Is there...?"</strong> para singular e <strong>"Are there...?"</strong> para plural.<br>`;
+                }
+                if (weakCategories.includes('Frases Negativas')) {
+                    diagText += `⚠️️ <strong>Ponto de Atenção Principal:</strong> Recomenda-se praticar mais as <em>Frases Negativas (${Math.round(negPct)}%)</em>. Lembre-se de incluir a palavra <strong>not</strong> (ou as contrações <strong>isn't / aren't</strong>) após o verbo.<br>`;
+                }
+                if (weakCategories.includes('Frases Afirmativas')) {
+                    diagText += `⚠️ <strong>Ponto de Atenção Principal:</strong> Preste atenção nas <em>Frases Afirmativas (${Math.round(affPct)}%)</em>. Verifique sempre se o elemento após o verbo está no singular (<em>There is a...</em>) ou no plural (<em>There are two...</em>).<br>`;
+                }
+
+                diagText += `<br><em>💡 Recomendação do Colégio Ideal:</em> Revise o card de teoria na Etapa 1 e refaça as questões em que encontrou dificuldade!`;
+            }
+
+            document.getElementById('pedagogicalFeedback').innerHTML = diagText;
+        }
+
+        // Restart Full Quiz
+        function restartQuiz() {
+            userAnswers = {};
+            selectedWordsPool = {};
+            currentQuestionIndex = 0;
+            prepareQuestions();
+            renderSidebarNav();
+            goToStep(3);
+        }
+    </script>
+</body>
+</html>
